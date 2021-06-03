@@ -1,0 +1,64 @@
+{% extends '::page-2cols.html.twig' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block titleIcon %}
+    <img src="{{ asset('assets/img/titles/uvs.png') }}" alt="{{ 'news.main.logo.alt'|trans }}" title="{{ 'base.logo.title'|trans }}" class="page-title-icon" />
+{% endblock %}
+
+{% block content %}
+    <ul class="nav nav-tabs page-tabs">
+        <li>
+            <a href="{{ path('news_index') }}">
+                <i class="icon-chevron-left"></i>
+                {{ 'news.main.view.back'|trans }}
+            </a>
+        </li>
+        {% if canEdit %}
+          <li class="pull-right">
+              <a href="{{ path('memberships_orga_news', {'login': article.orga.login, 'id': article.id}) }}">
+                  <i class="icon-pencil"></i>
+                  {{ 'news.main.view.edit'|trans }}
+              </a>
+          </li>
+        {% endif %}
+        {% if is_granted('ROLE_NEWS_ADMIN') and article.publishedAt != null %}
+            {% if article.validatedAt == null %}
+                <li class="pull-right">
+                    <a href="{{ path('news_validate', {'id': article.id}) }}">
+                        <i class="icon-check"></i>
+                        {{ 'news.main.view.validate'|trans }}
+                    </a>
+                </li>
+            {% else %}
+                <li class="pull-right">
+                    <a href="{{ path('news_unvalidate', {'id': article.id}) }}">
+                        <i class="icon-remove"></i>
+                        {{ 'news.main.view.unvalidate'|trans }}
+                    </a>
+                </li>
+            {% endif %}
+        {% endif %}
+    </ul>
+
+    {% if article.publishedAt == null %}
+      <div class="alert alert-warning" role="alert">
+        {{ 'news.main.view.notPublished'|trans }}
+      </div>
+    {% elseif article.validatedAt == null %}
+      <div class="alert alert-warning" role="alert">
+        {{ 'news.main.view.notValidated'|trans }}
+      </div>
+    {% endif %}
+    <div class="padding20-all">
+      {{ article.body|raw }}
+      <br>
+      <br>
+      <br>
+      {% if article.publishedAt == null %}
+        <p class="text-right"><em>Créé le {{ article.createdAt|date('d/m/Y H:i') }} par {{ article.author.fullname }}</em></p>
+      {% else %}
+        <p class="text-right"><em>Publié le {{ article.publishedAt|date('d/m/Y H:i') }} par {{ article.author.fullname }}</em></p>
+      {% endif %}
+    </div>
+{% endblock %}

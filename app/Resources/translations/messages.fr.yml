@@ -151,6 +151,9 @@ role:
 
     ROLE_ARGENTIQUE_ADMIN: Voir la documentation pour ajouter des photos au site
     ROLE_ARGENTIQUE_READ: Voir les photos du site
+    ROLE_NEWS_ADMIN: Peut modérer les news
+    ROLE_NEWS_EDIT: Peut modifier les news d'une asso s'il est autorisé
+    ROLE_NEWS_READ: Peut lire les news d'une asso
 
     ROLE_ASSOS_MEMBERS: Voir la liste des membres d'une association
 

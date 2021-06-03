@@ -1,0 +1,43 @@
+{% extends '::page-2cols.html.twig' %}
+
+{% block title %}{{ 'news.main.title'|trans }}{% endblock %}
+
+{% block titleIcon %}
+    <img src="{{ asset('assets/img/titles/uvs.png') }}" alt="{{ 'news.main.logo.alt'|trans }}" title="{{ 'base.logo.title'|trans }}" class="page-title-icon" />
+{% endblock %}
+
+{% block content %}
+    {% if is_granted('ROLE_NEWS_ADMIN') %}
+        <ul class="nav nav-tabs page-tabs">
+              <li class="pull-right">
+                  <a href="{{ path('news_moderate') }}">
+                      {{ 'news.main.index.moderate'|trans }}
+                  </a>
+              </li>
+        </ul>
+    {% endif %}
+    <div class="padding20-all">
+        <h2>{{ 'news.main.index.head'|trans }}</h4>
+
+        <br />
+        <h4>Derniers articles :</h4>
+        <ul class="article-list">
+            {% for article in articles %}
+                <li>
+                    <a href="{{ path('news_view', {'id': article.id}) }}">
+                        <span>
+                            {% if article.publishedAt == null %}
+                                [{{ 'news.main.index.notPublished'|trans }}]
+                            {% endif %}
+                                [{{ article.orga.name }}] {{ article.title }}
+                        </span>
+                        <span>{{ article.publishedAt|date('d/m/Y H:i') }}</span> 
+                    </a>
+                </li>
+            {% else %}
+                <li>{{ 'news.main.index.noResult'|trans }}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+{% endblock %}

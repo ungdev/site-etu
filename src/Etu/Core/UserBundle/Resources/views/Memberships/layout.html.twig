@@ -74,6 +74,13 @@
                                         </a>
                                     </li>
                                 {% endif %}
+                                {% if membership.hasPermission('news') and etu.modules.isEnabled('news') %}
+                                    <li  {% if tab == 'memberships_orga_news' %}class="active"{% endif %}>
+                                        <a href="{{ path('memberships_orga_news', {'login': membership.organization.login}) }}">
+                                            {{ 'user.memberships.menu.news'|trans }}
+                                        </a>
+                                    </li>
+                                {% endif %}
 
                                 {% if etu.modules.isEnabled('wiki') %}
                                     <li  {% if tab == 'memberships_orga_wiki' %}class="active"{% endif %}>

@@ -11,6 +11,7 @@ security:
             - ROLE_TROMBI # Can search on trombi
 
         ROLE_USER:
+            - ROLE_NEWS_READ # Read orga's news
 
         ROLE_STUDENT:
             - ROLE_CORE_SUBSCRIBE # User can receive and use subscriptions
@@ -29,6 +30,7 @@ security:
             - ROLE_COVOIT_EDIT # Can answer, post and set alerts on covoit bundle
             - ROLE_CUMUL # Can cumul timetables
             - ROLE_DAYMAIL_EDIT # Can edit daymail of his organization if authorized
+            - ROLE_NEWS_EDIT # Can edit news of his organization if authorized
             - ROLE_EVENTS_INTERNAL # can read Private/internal calendar and events
             - ROLE_EVENTS_ANSWER # Can see answer list
             - ROLE_EVENTS_ANSWER_POST # Can post an answer
@@ -58,6 +60,7 @@ security:
             - ROLE_COVOIT_EDIT # Can answer, post and set alerts on covoit bundle
             - ROLE_CUMUL # Can cumul timetables
             - ROLE_DAYMAIL_EDIT # Can edit daymail of his organization if authorized
+            - ROLE_NEWS_EDIT # Can edit news of his organization if authorized
             - ROLE_EVENTS_INTERNAL # can read Private/internal calendar and events
             - ROLE_EVENTS_EDIT # Can edit event of his organization if authorized
             - ROLE_TROMBI # Can search on trombi
@@ -78,6 +81,7 @@ security:
             - ROLE_COVOIT # Can read covoit bundle
             - ROLE_COVOIT_EDIT # Can answer, post and set alerts on covoit bundle
             - ROLE_DAYMAIL_EDIT # Can edit daymail of his organization if authorized
+            - ROLE_NEWS_EDIT # Can edit news of his organization if authorized
             - ROLE_EVENTS_INTERNAL # can read Private/internal calendar and events
             - ROLE_EVENTS_EDIT # Can edit event of his organization if authorized
             - ROLE_TROMBI # Can search on trombi
@@ -103,6 +107,7 @@ security:
             - ROLE_UV_REVIEW_ADMIN # Can moderate and remove UV review and old exams
             - ROLE_BADGE_ADMIN # Can create and attribute badges
             - ROLE_WIKI_ADMIN # Can lock, read and write on every admin page on the wiki
+            - ROLE_NEWS_ADMIN # Edit news
 
         ROLE_SUPERADMIN:
             - ROLE_ADMIN
@@ -119,6 +124,7 @@ security:
             - ROLE_CORE_ADMIN_HOME # Can see admin homepage
             - ROLE_FORUM_ADMIN # Can moderate forum
             - ROLE_UV_REVIEW_ADMIN # Can moderate and remove UV review and old exams
+            - ROLE_NEWS_ADMIN # Edit news blog
 
         ROLE_ARGENTIQUE:
             - ROLE_CORE_ADMIN_HOME # Can see admin homepage
@@ -140,6 +146,7 @@ security:
             - ROLE_CORE_SCHEDULE_OWN # Can read his own schedule
             - ROLE_CORE_HOMEPAGE # Can see the private homepage
             - ROLE_ARGENTIQUE_READ # View pictures
+            - ROLE_NEWS_READ # View news
             - ROLE_ASSOS_MEMBERS # Read assos member list
             - ROLE_BUGS # read bugs list
             - ROLE_COVOIT # Can read covoit bundle

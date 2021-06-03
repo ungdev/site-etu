@@ -1,0 +1,82 @@
+{% extends '@EtuUser/Memberships/layout.html.twig' %}
+{% set tab = 'memberships_orga_news' %}
+
+{% block title %}{{ membership.organization.name }}{% endblock %}
+
+{% block titleIcon %}
+    <img src="{{ asset('assets/img/titles/orga.png') }}" alt="{{ 'base.logo.alt'|trans }}" title="{{ 'base.logo.title'|trans }}" class="page-title-icon" />
+{% endblock %}
+
+{% block membership_content %}
+        
+        {{ form_start(form) }}
+        {% if available|count > 0 %}
+        <div class="control-group">
+            <label class="control-label">{{ 'news.main.article.dropdown'|trans }}</label>
+            <div class="controls">
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        Modifier une autre news
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% for article in available %}
+                            {% if article == 'new' %}
+                            <li>
+                                <a href="{{ path('memberships_orga_news', {'login': orga.login, 'id': '0'}) }}">
+
+                                    Nouvelle publication
+
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            {% else %}
+                            <li>
+                                <a href="{{ path('memberships_orga_news', {'login': orga.login, 'id': article.id}) }}">
+                                    <span>- {{ article.name }}</span>
+                                </a>
+                            </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {{ form_row(form.title) }}
+        {{ form_row(form.body) }}
+
+        <div class="control-group">
+            <div class="controls">
+                {{ form_rest(form) }}
+
+                {% if article.id > 0 %}
+                    <button type="submit" class="btn">
+                        {{ 'news.main.article.edit'|trans }}
+                    </button>
+                    <button type="submit" class="btn" name="_saveandsee">
+                        {{ 'news.main.article.saveandsee'|trans }}
+                    </button>
+                    {% if article.publishedAt != null %}
+                      <button type="submit" class="btn btn-danger" name="_unpublish">
+                          {{ 'news.main.article.unpublish'|trans }}
+                      </button>
+                    {% else %}
+                      <button type="submit" class="btn btn-primary" name="_publish">
+                          {{ 'news.main.article.publish'|trans }}
+                      </button>
+                    {% endif %}
+                    <a href="{{ path('news_remove', {'login': orga.id, 'id': article.id}) }}"
+                       class="btn btn-link pull-right">
+                        {{ 'news.main.article.delete'|trans }}
+                    </a>
+                {% else %}
+                    <button type="submit" class="btn">
+                        {{ 'news.main.article.new'|trans }}
+                    </button>
+                {% endif %}
+            </div>
+        </div>
+        
+    {{ form_end(form) }}
+{% endblock %}

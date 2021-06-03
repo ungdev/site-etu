@@ -14,3 +14,4 @@ modules:
   - Etu\Module\UploadBundle\EtuModuleUploadBundle
   - Etu\Module\SIABundle\EtuModuleSIABundle
   - Etu\Module\BadgesBundle\EtuModuleBadgesBundle
+  - Etu\Module\NewsBundle\EtuModuleNewsBundle

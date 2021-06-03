@@ -82,6 +82,14 @@
                                     </li>
                                 {% endif %}
 
+                                {% if membership.hasPermission('news') and etu.modules.isEnabled('news') %}
+                                    <li>
+                                        <a href="{{ path('memberships_orga_news', {'login': membership.organization.login}) }}">
+                                            {{ 'user.memberships.menu.news'|trans }}
+                                        </a>
+                                    </li>
+                                {% endif %}
+
                                 {% if etu.modules.isEnabled('assos') %}
                                     <li>
                                         <a href="{{ path('orgas_view', {'login': membership.organization.login}) }}">

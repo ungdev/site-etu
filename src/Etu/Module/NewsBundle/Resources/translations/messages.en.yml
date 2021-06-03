@@ -1,0 +1,48 @@
+
+news:
+  admin:
+    menu_item: Moderate News
+  sidebar:
+    service: News
+  main:
+    article:
+      confirm: The article has been saved
+      confirmWarning: The article has been saved, do not forget to publish it !
+      confirmPublish: The article has been published !
+      confirmUnpublish: The article has been withdrawn !
+      confirmValidate: The article has been validated, it is now visible to all !
+      confirmUnvalidate: The article has been invalidated, it is now hidden to all !
+      dropdown: Other unpublished articles
+      delete: Delete article
+      edit: Edit article
+      labels:
+        title: Title
+        body: Content
+      new: Create an article
+      notFound: The article you're trying to get doesn't exist or doesn't exist anymore.
+      publish: Publish this article
+      unpublish: Withdraw this publication
+      saveandsee: Save and see
+    index:
+      head: Organizations latest news
+      moderate: Moderate
+      new: Add an article
+      noResult: No articles
+      notPublished: NOT PUBLISHED
+    moderate:
+      head: News moderation
+      back: Back
+      body: You can here moderate articles written by all associations. Please check if the content is decent, everybody can read those articles. If there's incorrect spelling, tell them.
+      noResult: No articles to moderate
+      subtitle: Articles to moderate
+    logo:
+      alt: Associations' news
+      title: Associations' news
+    title: Associations' news
+    view:
+      back: Back to the liste
+      edit: Edit article
+      notPublished: This article is not visible, you must publish it
+      notValidated: This article is not validated, wait until a moderator check it
+      unvalidate: Invalidate
+      validate: Validate

@@ -1,0 +1,48 @@
+
+news:
+  admin:
+    menu_item: Modérer les News
+  sidebar:
+    service: News
+  main:
+    article:
+      confirm: L'article a été sauvegardé
+      confirmWarning: L'article a été sauvegardé, n'oubliez pas de le publier !
+      confirmPublish: L'article a été publié !
+      confirmUnpublish: L'article a été retiré !
+      confirmValidate: L'article a été validé, il est maintenant visible de tous !
+      confirmUnvalidate: L'article a été invalidé, il n'est maintenant plus visble de tous !
+      dropdown: Autre articles non publiés
+      delete: Supprimer l'article
+      edit: Modifier l'article
+      labels:
+        title: Titre
+        body: Contenu
+      new: Créer un article
+      notFound: L'article que vous souhaitez consulter n'existe pas ou n'existe plus.
+      publish: Publier cet article
+      unpublish: Retirer la publication
+      saveandsee: Sauvegarder et visualiser
+    index:
+      head: Voici les dernières news des assos
+      moderate: Modération
+      new: Ajouter un article
+      noResult: Aucun article pour le moment
+      notPublished: NON PUBLIÉ
+    moderate:
+      head: Modération des news
+      back: Retour
+      body: Vous pouvez ici modérer les articles écrits par les associations. Vérifiez bien que le contenu est décent, tout le monde peut lire ces articles. S'il y a des fautes, signalez le leur.
+      noResult: Aucun article à modérer pour le moment
+      subtitle: Articles à modérer
+    logo:
+      alt: News des Associations
+      title: News des Associations
+    title: News des Associations
+    view:
+      back: Retourner à la liste
+      edit: Modifier l'article
+      notPublished: Cet article n'est pas visible, vous devez le publier
+      notValidated: Cet article n'est pas validé, vous devez attendre qu'un modérateur le valide
+      unvalidate: Invalider
+      validate: Valider
